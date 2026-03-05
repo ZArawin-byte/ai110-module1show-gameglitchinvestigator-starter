@@ -25,13 +25,13 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ## 📝 Document Your Experience
 
-- [ ] Describe the game's purpose.
-- [ ] Detail which bugs you found.
-- [ ] Explain what fixes you applied.
+- [x] Describe the game's purpose: This is a number guessing game where the player tries to guess a secret number within a set number of attempts. The game gives hints after each guess to tell you whether to go higher or lower, and tracks your score across attempts.
+- [x] Detail which bugs you found: The hints were backwards (guessing too high told you to go higher instead of lower). On even-numbered attempts the secret was secretly converted to a string making it impossible to win. The New Game button used a hardcoded range of 1-100 regardless of difficulty and didn't reset the game status, so after losing you couldn't start fresh.
+- [x] Explain what fixes you applied: Flipped the hint messages in check_guess so "Too High" says "Go lower!" and "Too Low" says "Go higher!". Removed the string conversion bug so the secret stays an integer on all attempts. Fixed the New Game button to use the correct difficulty range and reset score, status, and history properly. Also moved game logic into logic_utils.py and fixed the hardcoded range text in the UI.
 
 ## 📸 Demo
 
-- [ ] [Insert a screenshot of your fixed, winning game here]
+- [x] ![Winning game screenshot](screenshot.png)
 
 ## 🚀 Stretch Features
 
